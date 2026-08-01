@@ -23,12 +23,13 @@ def extract_tag(facts, tag, unit="USD"):
     try:
         tag_data = facts["facts"]["us-gaap"][tag]
     except KeyError:
-        return pd.DataFrame()  # tag doesn't exist for this company
+        return pd.DataFrame()
 
     rows = []
     for entry in tag_data["units"].get(unit, []):
         rows.append({
             "tag": tag,
+            "start_date": entry.get("start"),
             "end_date": entry["end"],
             "value": entry["val"],
             "fiscal_year": entry.get("fy"),
