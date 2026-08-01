@@ -60,3 +60,8 @@ if __name__ == "__main__":
     print(result_df)
     result_df.to_csv("data/processed/regression_target.csv", index=False)
     print(f"\nSaved {len(result_df)} rows to data/processed/regression_target.csv")
+
+    print("\nSummary stats:")
+    print(result_df["price_reaction_pct"].describe())
+    print("\nPer-ticker mean/std:")
+    print(result_df.groupby("ticker")["price_reaction_pct"].agg(["mean", "std", "count"]))
