@@ -4,3 +4,4 @@ yfinance
 python-dotenv
 xgboost
 scikit-learn
+lxml

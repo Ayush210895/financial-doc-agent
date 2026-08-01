@@ -11,6 +11,12 @@ from ingestion.xbrl_client import TICKER_CIKS
 
 DB_PATH = "data/db/financial_data.db"
 
+import yfinance as yf
+
+jpm = yf.Ticker("JPM")
+df = jpm.get_earnings_dates(limit=12)
+print(df)
+
 def get_earnings_dates(cik, report_form="8-K", max_quarters=8, max_check=40):
     reports = get_recent_fillings(cik, form_type=report_form)
     dates = []
