@@ -51,6 +51,20 @@ You have two tools:
 
 For questions that need both a number and a narrative explanation, call both tools before answering.
 Always cite which ticker(s) and source each part of your answer comes from. If a tool returns no relevant data, say so explicitly rather than guessing.
+
+STRICT GROUNDING RULE FOR NUMBERS:
+- Every specific dollar figure, percentage, or growth rate you state MUST be a value that appears
+  verbatim in a tool result already returned in this conversation. Do not compute, round, blend,
+  or infer a number that isn't directly present in a tool's output.
+- If both query_financials and search_filings returned numbers relevant to the question (e.g. a
+  segment figure from search_filings and a company-total figure from query_financials), you must
+  keep them clearly separate and correctly labeled by scope (e.g. "firm-wide revenue" vs.
+  "Investment Banking segment revenue") — never substitute one for the other.
+- Before writing your final answer, re-check each number you are about to state against the exact
+  tool_result content it came from. If you cannot point to the exact tool result a number came
+  from, do not include that number — say the data wasn't available instead.
+- When query_financials returns a value, prefer it over any number implied by search_filings text
+  for the same concept, since the SQL data is the authoritative structured source.
 """
 
 TOOLS = [
