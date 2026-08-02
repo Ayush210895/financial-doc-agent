@@ -1,16 +1,10 @@
 import json
 import os
 import sqlite3
-import numpy as np
-import faiss
-from sentence_transformers import SentenceTransformer
-from pathlib import Path
 from anthropic import Anthropic
+from retrieval import load_index_and_metadata, retrieve
 
-INDEX_PATH = Path("data/db/faiss_index.bin")
-METADATA_PATH = Path("data/db/chunk_metadata.json")
 DB_PATH = "data/db/financial_data.db"
-MODEL_NAME = "all-MiniLM-L6-v2"
 TICKERS = ["JPM", "GS", "BAC", "WFC", "UBS"]
 
 SCHEMA_DESCRIPTION = """
@@ -98,28 +92,6 @@ TOOLS = [
 ]
 
 
-def load_index_and_metadata():
-    index = faiss.read_index(str(INDEX_PATH))
-    metadata = json.loads(METADATA_PATH.read_text(encoding="utf-8"))
-    return index, metadata
-
-
-def search_filings(query, tickers, index, metadata, model, top_k=5):
-    fetch_k = top_k * 10 if tickers else top_k
-    query_vec = model.encode([query], convert_to_numpy=True)
-    faiss.normalize_L2(query_vec)
-    scores, indices = index.search(query_vec, fetch_k)
-    results = []
-    for score, idx in zip(scores[0], indices[0]):
-        chunk = metadata[idx]
-        if tickers and chunk["ticker"] not in tickers:
-            continue
-        results.append({**chunk, "score": float(score)})
-        if len(results) >= top_k:
-            break
-    return results
-
-
 def query_financials(sql):
     sql_stripped = sql.strip().rstrip(";")
     if not sql_stripped.lower().startswith("select"):
@@ -135,7 +107,7 @@ def query_financials(sql):
         return {"error": str(e)}
 
 
-def run_agent(question, index, metadata, model, client, max_turns=5):
+def run_agent(question, index, metadata, client, max_turns=5):
     messages = [{"role": "user", "content": question}]
     trace = []
 
@@ -158,12 +130,12 @@ def run_agent(question, index, metadata, model, client, max_turns=5):
             if block.type != "tool_use":
                 continue
             if block.name == "search_filings":
-                result = search_filings(
-                    block.input["query"], block.input.get("tickers"),
-                    index, metadata, model,
+                result = retrieve(
+                    block.input["query"], index, metadata,
+                    tickers=block.input.get("tickers"), top_k=5,
                 )
                 trace.append({"tool": "search_filings", "input": block.input, "n_results": len(result)})
-                content = json.dumps([{"ticker": r["ticker"], "text": r["text"], "score": r["score"]} for r in result])
+                content = json.dumps([{"ticker": r["ticker"], "text": r["text"], "rerank_score": r.get("rerank_score")} for r in result])
             elif block.name == "query_financials":
                 result = query_financials(block.input["sql"])
                 trace.append({"tool": "query_financials", "input": block.input, "result": result})
@@ -183,7 +155,6 @@ def run_agent(question, index, metadata, model, client, max_turns=5):
 
 if __name__ == "__main__":
     index, metadata = load_index_and_metadata()
-    model = SentenceTransformer(MODEL_NAME)
     client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
     test_questions = [
@@ -193,7 +164,7 @@ if __name__ == "__main__":
 
     for q in test_questions:
         print("QUESTION:", q)
-        answer, trace = run_agent(q, index, metadata, model, client)
+        answer, trace = run_agent(q, index, metadata, client)
         print("\nANSWER:\n", answer)
         print("\nTOOL CALLS:")
         for t in trace:
