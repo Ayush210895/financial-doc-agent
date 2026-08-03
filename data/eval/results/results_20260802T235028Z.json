@@ -1,0 +1,386 @@
+[
+  {
+    "id": "jpm_interest_rate_risk",
+    "category": "narrative",
+    "question": "What are JPMorgan's main risk factors related to interest rates?",
+    "answer": "Based on JPMorgan's filings, the main risk factors related to interest rates are:\n\n## Key Interest Rate Risk Factors:\n\n1. **Structural Mismatches in Asset and Liability Repricing**\n   - Differences in timing among the maturity or repricing of assets, liabilities, and off-balance sheet instruments\n   - Differences in the amounts of assets, liabilities, and off-balance sheet instruments that mature or reprice at the same time\n\n2. **Yield Curve Exposure**\n   - Differences in the amounts by which short-term and long-term market interest rates change (e.g., changes in the slope of the yield curve)\n\n3. **Broad Net Income Impact**\n   - Interest rate risk is described as \"one of the Firm's significant market risks\" and affects reported net income importantly\n   - The risk arises not only from trading activities but also from traditional banking activities including:\n     - Extension of loans and credit facilities\n     - Taking deposits\n     - Issuing debt\n     - Management of the investment securities portfolio and associated derivative instruments\n\n## Risk Management Approach:\n\nJPMorgan manages structural interest rate risk primarily through:\n- Its investment securities portfolio\n- Interest rate derivatives\n- Earnings-at-risk (EaR) simulations that evaluate sensitivity to various interest rate scenarios for interest rate-sensitive assets and liabilities across multiple currencies\n\nThe firm closely monitors interest rate reset dates, maturities, rate indices used for repricing, and any interest rate ceilings or floors on adjustable rate products to manage this exposure.",
+    "ticker_check": {
+      "expected": [
+        "JPM"
+      ],
+      "covered": [
+        "JPM"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    "substring_check": null,
+    "judge": {
+      "faithfulness": 4,
+      "relevance": 5,
+      "unsupported_claims": [
+        "Yield curve exposure as a separate bullet point - the tool results mention 'differences in the amounts by which short-term and long-term market interest rates change' but this is cut off and not fully present in the provided excerpts"
+      ],
+      "notes": "The answer is highly relevant and addresses the question directly. Most claims are well-supported by the tool results, including structural mismatches, impact on net income, and risk management approaches. However, the 'Yield curve exposure' section appears to extrapolate beyond what is clearly shown in the truncated tool output (the text cuts off mid-sentence with 'e.g., changes in the slope of the yield curve' not fully visible). The answer appropriately synthesizes information from multiple tool result segments and stays faithful to the core findings about interest rate risk factors."
+    }
+  },
+  {
+    "id": "jpm_bac_credit_risk",
+    "category": "comparison",
+    "question": "Compare JPMorgan and Bank of America's approach to credit risk in their most recent filings.",
+    "answer": "Based on the information from the most recent filings, here's a comparison of JPMorgan and Bank of America's credit risk approaches:\n\n## **JPMorgan Chase**\n\n**Governance & Structure:**\n- Maintains a formal **credit risk management governance** framework with dedicated Credit Risk Management and an **independent Credit Review function**\n- Models, assumptions, and inputs used in evaluating credit risk are **independently validated by groups separate from business lines**\n- Senior management is significantly involved in the credit approval and review process, with risk levels adjusted as needed\n\n**Consumer Portfolio:**\n- Credit risk is **monitored for delinquency and other trends** at the portfolio level\n- Consumer Risk Management evaluates delinquency trends against business expectations, current/forecasted economic conditions, and industry benchmarks\n- **Historical and forecasted economic performance** are incorporated into modeling of estimated consumer credit losses\n- Concentrations managed primarily by **product and U.S. geographic region**\n\n**Wholesale Portfolio:**\n- Monitored regularly at **aggregate portfolio, industry, and individual client/counterparty levels**\n- **Established concentration limits** reviewed and revised periodically; limits are subject to **stress-based loss constraints**\n- Risk management involves loan underwriting/approval, syndications, loan sales/securitizations, credit derivatives, master netting agreements, and collateral techniques\n- Independent Credit Review assesses wholesale risk ratings and evaluates the effectiveness of business line credit processes\n\n---\n\n## **Bank of America**\n\n**Consumer Portfolio:**\n- Credit risk management **begins with initial underwriting and continues throughout the borrower's credit cycle**\n- Uses **statistical techniques in conjunction with experiential judgment** in all portfolio management aspects\n- **Statistical models** built using detailed behavioral information from external sources (credit bureaus) and internal historical experience\n- Models used for both new and ongoing credit decisions, authorization/line management, collection strategies, and determining allowance for loan losses\n\n**Commercial Portfolio:**\n- Credit risk assessment based on analysis of **borrower/counterparty financial position**\n- Commercial credit exposures are **assigned a risk rating** and subject to defined credit approval standards\n- Risk ratings are **monitored on an ongoing basis** and adjusted to reflect changes in financial condition, cash flow, and risk profile\n- Credit decisions consider **risk rating, collateral, country, industry, and single-name concentration limits**\n- Uses **risk rating aggregations** to measure and evaluate portfolio concentrations\n- Risk ratings factor into allocated capital and allowance determination\n\n---\n\n## **Key Differences:**\n\n1. **Independent Review:** JPM emphasizes an **independent Credit Review function** separate from business lines for assessing wholesale risk ratings; BAC emphasizes integration of risk management throughout business processes.\n\n2. **Modeling Approach:** JPM incorporates **forecasted economic conditions** and stress testing; BAC focuses on **statistical techniques using behavioral data** from credit bureaus and historical experience.\n\n3. **Framework Emphasis:** JPM highlights a formal **governance structure with credit approval authorities and concentration limits**; BAC emphasizes **risk management integration through their \"Identify, Measure, Monitor and Control\" framework**.\n\n4. **Portfolio Management:** JPM manages concentrations by **product/geography (consumer) and industry/counterparty (wholesale)**; BAC uses **risk ratings as a central tool** across both consumer and commercial portfolios.",
+    "ticker_check": {
+      "expected": [
+        "BAC",
+        "JPM"
+      ],
+      "covered": [
+        "BAC",
+        "JPM"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    "substring_check": null,
+    "judge": {
+      "faithfulness": 4,
+      "relevance": 5,
+      "unsupported_claims": [
+        "JPM emphasizes an 'independent Credit Review function' separate from business lines - the tool results mention 'Independent Credit Review' but don't explicitly state it's separate from business lines in the provided excerpts",
+        "BAC focuses on 'statistical techniques using behavioral data from credit bureaus' - while the tool mentions 'statistical techniques' and 'external sources (credit bureaus)', the specific claim about behavioral data from credit bureaus is partially inferred",
+        "JPM incorporates 'forecasted economic conditions and stress testing' - while 'forecasted economic conditions' is mentioned, the specific claim about stress testing in this context is only partially supported (mentioned for concentration limits as 'stress-based loss constraints')"
+      ],
+      "notes": "The answer is well-structured and addresses the comparison question comprehensively. Most claims are directly supported by the tool results. Minor issues: some statements blend explicit text with reasonable inferences; a few specific details (like the independent review function being 'separate from business lines') are present in the tool results but not explicitly detailed enough in the excerpts. The answer avoids citing unsupported numbers and maintains accuracy on the core comparison points."
+    }
+  },
+  {
+    "id": "jpm_revenue_growth",
+    "category": "numeric",
+    "question": "What was JPMorgan's total revenue in 2025 and how much did it grow from 2024?",
+    "answer": "Based on JPMorgan's financial filings:\n\n- **2025 Total Revenue**: $182.447 billion (full year, 364 days)\n- **2024 Total Revenue**: $177.556 billion (full year, 365 days)\n- **Growth**: $182.447 billion \u2212 $177.556 billion = **$4.891 billion increase**, or approximately **2.75% growth** year-over-year\n\nJPMorgan's revenue grew modestly from 2024 to 2025, with total revenues increasing by about $4.9 billion.",
+    "ticker_check": {
+      "expected": [
+        "JPM"
+      ],
+      "covered": [
+        "JPM"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    "substring_check": {
+      "expected": [
+        "182.4",
+        "177.5"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    "judge": {
+      "faithfulness": 5,
+      "relevance": 5,
+      "unsupported_claims": [],
+      "notes": "All numbers are directly supported by the tool results. The assistant correctly identified 2025 revenue as $182.447 billion and 2024 revenue as $177.556 billion, calculated the difference as $4.891 billion, and computed the growth rate as 2.75%. The answer directly addresses both parts of the question (total revenue for 2025 and growth from 2024)."
+    }
+  },
+  {
+    "id": "gs_strategy",
+    "category": "narrative",
+    "question": "What is Goldman Sachs' core business strategy according to its most recent annual report?",
+    "answer": "Based on Goldman Sachs' most recent annual report (Form 10-K), the firm's core business strategy centers on **three main business segments**:\n\n1. **Global Banking & Markets** \u2014 Generates revenues from:\n   - Investment banking fees (advisory, equity and debt underwriting)\n   - Fixed Income, Currency and Commodities (FICC) intermediation and financing\n   - Equities intermediation and financing\n   - Relationship lending and acquisition financing\n   - Transaction banking services\n\n2. **Asset & Wealth Management** \u2014 Provides investment services to preserve and grow financial assets for both institutional and individual clients, including:\n   - Investment management across all major asset classes\n   - Wealth advisory and financial planning services\n   - Brokerage transactions for wealth management clients\n   - Private banking and lending to wealth management clients\n   - Deposits raised through consumer banking digital platforms\n\n3. **Platform Solutions** \u2014 Substantially focused on issuing credit cards (Apple Card) and raising deposits, along with some exited businesses.\n\n**Strategic Focus:** According to the filing, Goldman Sachs has been investing in \"businesses that generate a higher level of more durable revenues.\" The firm also emphasizes geographic diversification through strategic locations in cities like Bengaluru, Salt Lake City, Dallas, Singapore, Warsaw, Birmingham, and Hyderabad, with 45% of employees working in strategic locations as of December 2025. This approach aims to build centers of excellence around specific capabilities to support business initiatives.",
+    "ticker_check": {
+      "expected": [
+        "GS"
+      ],
+      "covered": [
+        "GS"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    "substring_check": null,
+    "judge": {
+      "faithfulness": 3,
+      "relevance": 4,
+      "unsupported_claims": [
+        "45% of employees working in strategic locations as of December 2025",
+        "Platform Solutions is 'substantially focused on issuing credit cards (Apple Card) and raising deposits'",
+        "The specific breakdown of geographic distribution percentages mentioned for EMEA and Asia"
+      ],
+      "notes": "The answer correctly identifies the three business segments and provides relevant strategic information supported by the tool results. However, the claim about '45% of employees in strategic locations' appears to be inferred or misinterpreted\u2014the tool results mention '30% in Asia' and reference to EMEA but do not explicitly state a 45% figure. The Platform Solutions description as 'substantially focused on issuing credit cards (Apple Card)' is stated in the filings but the tool results only mention 'narrowing strategic focus with respect to consumer-related activities' without explicitly confirming Apple Card details. The answer is highly relevant to the question but contains some claims not directly supported by the provided tool outputs."
+    }
+  },
+  {
+    "id": "wfc_risk_factors",
+    "category": "narrative",
+    "question": "What are Wells Fargo's main risk factors related to regulatory compliance?",
+    "answer": "Based on Wells Fargo's filings, here are the main risk factors related to regulatory compliance:\n\n## Key Regulatory Compliance Risk Factors:\n\n**1. Complex and Evolving Regulatory Landscape**\nWells Fargo faces heightened compliance and regulatory oversight due to the increasingly complex regulatory environment. The company operates under different and sometimes conflicting laws and regulations across jurisdictions, including differences between U.S. federal and state law, as well as differences between U.S. and non-U.S. regulations. This complexity can lead to compliance difficulties and issues.\n\n**2. Consent Orders and Restrictions**\nWells Fargo is subject to a consent order and other regulatory actions that impose various conditions and restrictions on the company's operations, subjecting it to continued regulatory oversight and compliance requirements.\n\n**3. Multiple Overlapping Investigations**\nA single compliance event or issue may trigger numerous and overlapping investigations and proceedings from multiple federal and state agencies in the U.S., as well as from multiple regulators and governmental entities in different jurisdictions.\n\n**4. Reporting and Disclosure Requirements**\nWells Fargo must comply with extensive legal and regulatory regimes requiring the company to report transactions and information to regulators, governmental authorities, self-regulatory organizations, exchanges, clearing houses, and customers. Failures to timely, completely, or accurately provide regulatory reports, customer notices, or disclosures can result in fines, penalties, business restrictions, or other adverse consequences.\n\n**5. Regulatory Spillover Effects**\nRegulatory or compliance issues at other financial institutions can result in regulatory scrutiny for Wells Fargo itself.\n\n**6. Licensing and Registration Requirements**\nThe company could face fines, penalties, business restrictions, or adverse consequences if it fails to obtain applicable licensing or registration in any jurisdiction where it offers its products and services.\n\n**7. Operational Risk from Non-Compliance**\nCompliance risk is defined as the risk resulting from failure to comply with laws, regulations, and regulatory guidance, as well as failure to appropriately address the impact on customers, including potential violations of internal policies and ethical standards.\n\nThe Board's Risk Committee provides primary oversight of all aspects of compliance risk and financial crimes risk management.",
+    "ticker_check": {
+      "expected": [
+        "WFC"
+      ],
+      "covered": [
+        "WFC"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    "substring_check": null,
+    "judge": {
+      "faithfulness": 2,
+      "relevance": 2,
+      "unsupported_claims": [
+        "Complex and Evolving Regulatory Landscape - specific claims about 'different and sometimes conflicting laws and regulations across jurisdictions' and 'differences between U.S. federal and state law, as well as differences between U.S. and non-U.S. regulations'",
+        "Consent Orders and Restrictions - claim about 'consent order and other regulatory actions'",
+        "Multiple Overlapping Investigations - entire section about 'numerous and overlapping investigations and proceedings from multiple federal and state agencies'",
+        "Reporting and Disclosure Requirements - specific details about 'extensive legal and regulatory regimes requiring the company to report transactions and information to regulators, governmental authorities, self-regulatory organizations, exchanges, clearing houses, and customers'",
+        "Regulatory Spillover Effects - entire section",
+        "Licensing and Registration Requirements - entire section",
+        "Operational Risk from Non-Compliance - definition of 'compliance risk' as stated"
+      ],
+      "notes": "The tool results contain only fragmentary text snippets about cybersecurity, internal policies/ethical standards, third-party service provider oversight, and general mentions of compliance risk and regulatory oversight. The assistant's answer constructs a detailed, well-organized list of seven specific risk factors, but most of these are not supported by the provided tool results. The tool excerpts are too incomplete to verify the claims made. The answer appears to synthesize information that goes beyond what the tool results actually contain, making it largely unsupported despite being topically relevant to the question."
+    }
+  },
+  {
+    "id": "ubs_business",
+    "category": "narrative",
+    "question": "What is UBS's core business strategy according to its most recent annual report?",
+    "answer": "Based on UBS's 2025 Annual Report, here is the company's core business strategy:\n\n**Primary Strategic Positioning:**\nUBS is committed to remaining:\n- The world's only truly global wealth manager\n- The number one Swiss universal bank\n- With a leading Asset Management franchise and a competitive, focused Investment Bank\n\n**Key Strategic Elements:**\n\n1. **Diversified Global Platform**: The strategy centers on leveraging a diversified global platform serving clients across regions and market cycles, with a focus on disciplined risk and cost management while delivering attractive capital returns.\n\n2. **Business Division Focus**:\n   - **Global Wealth Management**: Positioned to serve expanded institutional and corporate client base; the company is enhancing connections between wealth management and investment banking capabilities\n   - **Investment Bank**: Aims to be the most client-focused, efficient, and data-driven investment bank through simplification of technology architecture, increased speed and quality of delivery, and talent attraction\n   - **Asset Management**: Expanding alternatives offerings through the new Unified Global Alternatives (UGA) business; expanding ETF offerings with cost-efficient and active options\n\n3. **Cross-Division Collaboration**: Joint efforts between divisions (e.g., Investment Bank with Global Wealth Management through GWM Solutions) and strategic external partnerships are key priorities.\n\n4. **Technology & Digital Strategy**: Leveraging technology to provide access to global liquidity, personalized advice, and differentiated content, with increased adoption of generative AI for efficiency and portfolio insights.\n\n5. **2028 Ambitions**: Target a reported return on CET1 capital of approximately 18% and a reported cost/income ratio of around 67%, with each core business division having clear profitability ambitions.",
+    "ticker_check": {
+      "expected": [
+        "UBS"
+      ],
+      "covered": [
+        "UBS"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    "substring_check": null,
+    "judge": {
+      "faithfulness": 2,
+      "relevance": 4,
+      "unsupported_claims": [
+        "Target a reported return on CET1 capital of approximately 18%",
+        "Target a reported cost/income ratio of around 67%",
+        "each core business division having clear profitability ambitions",
+        "Unified Global Alternatives (UGA) business",
+        "Net profit attributable to shareholders was USD 7",
+        "Joint efforts between divisions (e.g., Investment Bank with Global Wealth Management through GWM Solutions)"
+      ],
+      "notes": "The answer is highly relevant to the question and captures the main strategic positioning from available excerpts (global wealth manager, Swiss universal bank, leading Asset Management, focused Investment Bank). However, it contains multiple specific claims not supported by the tool results provided, including financial targets (18% CET1 return, 67% cost/income ratio), specific business names (UGA), and specific initiatives. The tool results are incomplete excerpts that don't contain these details. The answer appears to draw from knowledge beyond the provided search results."
+    }
+  },
+  {
+    "id": "gs_bac_wfc_comparison",
+    "category": "comparison",
+    "question": "Compare how Goldman Sachs, Bank of America, and Wells Fargo describe their approach to market risk.",
+    "answer": "Based on the filings, here's how these three banks describe their approach to market risk:\n\n## **Goldman Sachs (GS)**\n\nGoldman Sachs emphasizes an **independent, decentralized governance model** for market risk:\n- Managers in revenue-producing units have accountability for managing risk within prescribed limits and have in-depth knowledge of their positions, markets, and available hedging instruments\n- **Corporate Treasury and Market Risk** work together to discuss market information, positions, and estimated loss scenarios on an ongoing basis\n- The firm focuses on **monitoring compliance with established market risk limits** and reporting exposures\n- Their approach includes **diversifying exposures, controlling position sizes, and evaluating mitigants** such as economic hedges in related securities or derivatives\n- Technically, Goldman's systems calculate **VaR (Value-at-Risk), Earnings-at-Risk (EaR), and other stress measures** with risk attribution to individual risk factors and reporting across multiple dimensions (desk, business, product type, entity)\n\n## **Bank of America (BAC)**\n\nBank of America structures market risk management through a **centralized governance function**:\n- **Global Risk Management (GRM)** is responsible for providing senior management with a \"clear and comprehensive understanding\" of trading risks\n- GRM's responsibilities include: ownership of market risk policy, developing quantitative risk models, calculating aggregated risk measures, establishing and monitoring position limits, conducting daily reviews and analysis of trading inventory, and approving material risk exposures\n- The firm evaluates risks using **quantitative measures on a daily basis**, including sensitivities to market risk factors and statistical measures like **VaR and stress testing**\n- For businesses outside Global Markets, market risks are monitored by their respective governance functions\n\n## **Wells Fargo (WFC)**\n\nThe search results did not return specific descriptions of Wells Fargo's market risk approach. Would you like me to search with different terms to find Wells Fargo's market risk management description?\n\n---\n\n**Key Comparison:** Goldman Sachs emphasizes business unit accountability with independent review, while Bank of America emphasizes centralized governance through its Global Risk Management function responsible for policy and approval authority. Both use similar quantitative tools (VaR, stress testing, sensitivities), but differ in governance structure.",
+    "ticker_check": {
+      "expected": [
+        "BAC",
+        "GS",
+        "WFC"
+      ],
+      "covered": [
+        "BAC",
+        "GS",
+        "WFC"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    "substring_check": null,
+    "judge": {
+      "faithfulness": 3,
+      "relevance": 4,
+      "unsupported_claims": [
+        "Goldman Sachs: 'risk attribution to individual risk factors and reporting across multiple dimensions (desk, business, product type, entity)' - this level of detail is not in the provided tool results",
+        "Bank of America: 'calculating aggregated risk measures, establishing and monitoring position limits, conducting daily reviews and analysis of trading inventory, and approving material risk exposures' - these specific GRM responsibilities are not explicitly stated in the tool results provided",
+        "Bank of America: 'For businesses outside Global Markets, market risks are monitored by their respective governance functions' - this statement is not supported by the tool results"
+      ],
+      "notes": "The answer appropriately acknowledges that Wells Fargo data was not available. For Goldman Sachs and BofA, the core governance structures and some techniques are supported by the tool results. However, the assistant adds several specific details about GRM responsibilities and risk measurement processes for BofA that go beyond what appears in the actual search results provided. The assistant also adds specificity about Goldman's reporting dimensions that isn't explicitly in the excerpts. The comparison framework is relevant and useful, but some claims lack direct textual support."
+    }
+  },
+  {
+    "id": "jpm_net_income",
+    "category": "numeric",
+    "question": "What was JPMorgan's net income in 2025?",
+    "answer": "**JPMorgan's net income for the full year 2025 was $57.048 billion** (covering January 1 \u2013 December 31, 2025).",
+    "ticker_check": {
+      "expected": [
+        "JPM"
+      ],
+      "covered": [
+        "JPM"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    "substring_check": null,
+    "judge": {
+      "faithfulness": 5,
+      "relevance": 5,
+      "unsupported_claims": [],
+      "notes": "The answer correctly identifies the full year 2025 net income of $57.048 billion from the first row of results (start_date: 2025-01-01, end_date: 2025-12-31, fiscal_period: FY). The figure is directly supported by the tool output and appropriately distinguished from quarterly figures. The answer directly and completely addresses the question asked."
+    }
+  },
+  {
+    "id": "jpm_eps",
+    "category": "numeric",
+    "question": "What was JPMorgan's basic earnings per share in 2025?",
+    "answer": "Based on JPMorgan Chase's (JPM) 10-K filing, **JPMorgan's basic earnings per share for the full year 2025 was $20.05**.",
+    "ticker_check": {
+      "expected": [
+        "JPM"
+      ],
+      "covered": [
+        "JPM"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    "substring_check": null,
+    "judge": {
+      "faithfulness": 5,
+      "relevance": 5,
+      "unsupported_claims": [],
+      "notes": "The answer correctly identifies the full-year 2025 basic EPS of $20.05 from the 10-K filing (FY period covering 2025-01-01 to 2025-12-31), which is the first and most relevant row in the results. The answer appropriately distinguishes this as the full-year figure rather than partial-year quarterly data."
+    }
+  },
+  {
+    "id": "bac_assets",
+    "category": "numeric",
+    "question": "What were Bank of America's total assets as of the most recent reporting period?",
+    "answer": "Bank of America's total assets as of the most recent reporting period (Q2 2026, ending June 30, 2026) were **$3.50 trillion** (approximately $3,499.2 billion).",
+    "ticker_check": {
+      "expected": [
+        "BAC"
+      ],
+      "covered": [
+        "BAC"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    "substring_check": null,
+    "judge": {
+      "faithfulness": 5,
+      "relevance": 5,
+      "unsupported_claims": [],
+      "notes": "The answer accurately reports the exact figure from the tool results ($3,499.2 billion / $3.50 trillion), correctly identifies the reporting period (Q2 2026, June 30, 2026), and properly attributes this as total assets. All claims are directly supported by the query output."
+    }
+  },
+  {
+    "id": "ubs_xbrl_gap",
+    "category": "abstention",
+    "question": "What was UBS's net income according to its US-GAAP XBRL filings?",
+    "answer": "I need to clarify an important limitation: According to the database schema, **UBS has no rows in the financial_facts table** because UBS is an IFRS filer, not a US-GAAP filer.\n\nUBS reports its financial results under International Financial Reporting Standards (IFRS), not US-GAAP. Therefore, there are no US-GAAP XBRL filings for UBS in the available structured financial database.\n\nIf you're looking for UBS's financial performance, I could:\n1. Help you find information from their IFRS filings through narrative search, or\n2. Compare UBS's results qualitatively to the other four US-GAAP filers in the database (JPM, GS, BAC, WFC)\n\nWould either of those be helpful?",
+    "ticker_check": {
+      "expected": [
+        "UBS"
+      ],
+      "covered": [
+        "UBS"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    "substring_check": null,
+    "judge": {
+      "faithfulness": 5,
+      "relevance": 4,
+      "unsupported_claims": [],
+      "notes": "The answer's factual claims are sound and appropriately qualified given the empty tool results. The assistant correctly identifies that UBS is an IFRS filer rather than US-GAAP filer. However, relevance is slightly reduced because the answer doesn't directly state that the specific data requested is unavailable, instead focusing on explaining why it's unavailable."
+    }
+  },
+  {
+    "id": "jpm_price_trend",
+    "category": "numeric",
+    "question": "How has JPMorgan's stock price trended over the past year based on the closing prices in the database?",
+    "answer": "Based on the price history data from the database, here's how JPMorgan Chase's (JPM) stock price has trended over the past year:\n\n**Starting Point (August 2024):** The earliest available data shows JPM closing at **$199.57** on August 1, 2024.\n\n**Recent Price (July 2026):** The most recent close in the database is **$351.79** on July 31, 2026.\n\n**Overall Trend:** JPMorgan's stock has shown a strong upward trajectory over this period, with the stock price rising from approximately **$199.57 to $351.79**, representing a gain of about **76.3%** over the roughly two-year span covered in the database.\n\n**Key Observations:**\n- The stock has generally trended upward, though with some volatility\n- In June 2026, there was a notable dip with the stock reaching as low as $295.25 (June 1, 2026)\n- The stock recovered from that June dip and has continued climbing, with recent prices in late July 2026 in the $344\u2013$357 range\n- The uptrend suggests positive investor sentiment toward JPMorgan during this period\n\nThis data comes from the price_history table in the financial database, covering daily closing prices for JPM.",
+    "ticker_check": {
+      "expected": [
+        "JPM"
+      ],
+      "covered": [
+        "JPM"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    "substring_check": null,
+    "judge": {
+      "faithfulness": 2,
+      "relevance": 4,
+      "unsupported_claims": [
+        "The question asks about 'the past year' but the data spans from August 2024 to July 2026, which is approximately two years, not one year",
+        "The assistant states this is 'roughly two-year span' in the answer but then claims to be answering about 'the past year' from the question",
+        "The percentage gain of 76.3% is mathematically correct based on the data points shown, but the timeframe mismatch makes the comparison misleading"
+      ],
+      "notes": "Faithfulness issue: The question specifically asks about 'the past year' but the assistant's answer uses data spanning approximately 2 years (August 2024 to July 2026). This is a significant discrepancy. All numerical values cited ($199.57, $351.79, $295.25, etc.) are accurately pulled from the tool results. The calculations and observations about trends are supported by the data. Relevance is high because the answer does address the stock price trend question comprehensively, but the timeframe mismatch represents a fundamental misalignment with what was asked."
+    }
+  },
+  {
+    "id": "gs_wfc_credit",
+    "category": "comparison",
+    "question": "Compare Goldman Sachs and Wells Fargo's exposure to consumer versus wholesale credit risk.",
+    "answer": "Perfect. Now I have the loan portfolio breakdown for both companies. Let me compile a comprehensive comparison based on the data I've found.\n\n## Comparison of Goldman Sachs vs. Wells Fargo: Consumer vs. Wholesale Credit Risk Exposure\n\n### **Loan Portfolio Composition**\n\n**Wells Fargo** (as of December 31, 2025):\n- **Commercial loans:** $599.9 billion (62% of total loans)\n  - Commercial and industrial: $452.1 billion\n  - Commercial real estate: $132.3 billion\n  - Lease financing: $15.5 billion\n- **Consumer loans:** $386.3 billion (38% of total loans)\n  - Residential mortgage: $242.2 billion\n  - Credit card: $59.5 billion\n  - Auto: $50.5 billion\n  - Other consumer: $34.1 billion\n- **Total loans:** $986.2 billion\n\n**Goldman Sachs** (as of December 31, 2025):\n- **Wholesale/Corporate lending:** $68.1 billion (28% of total loans)\n  - Corporate: $30.7 billion\n  - Commercial real estate: $37.4 billion\n- **Consumer-related:** $19.7 billion credit cards (8% of total loans)\n- **Securities-based lending:** $18.1 billion (8%)\n- **Other collateralized:** $99.0 billion (41%)\n- **Residential real estate:** $32.0 billion (13%)\n- **Other:** $3.0 billion\n- **Total loans:** $239.9 billion\n\n### **Key Structural Differences**\n\n**Wells Fargo** has a **significantly higher consumer credit exposure** in absolute and relative terms:\n- Consumer loans represent 38% of the loan portfolio, with substantial exposures to residential mortgages ($242.2 billion), auto loans ($50.5 billion), and credit cards ($59.5 billion).\n- Commercial lending dominates at 62%, with diversified exposure across C&I, CRE, and lease financing.\n\n**Goldman Sachs** has a **predominantly wholesale business model** with limited consumer exposure:\n- The firm is in the process of **narrowing its consumer-related activities**, having exited or announced exits from the Apple Card program, GM credit card program, and GreenSky consumer financing.\n- As of December 2025, credit card loans were $19.7 billion, down from $21.4 billion in 2024 (they appear to no longer be held at amortized cost in 2025).\n- Residential real estate loans ($32.0 billion) are primarily extended to **wealth management clients** with conservative underwriting (loan-to-value ratios less than 80%, FICO scores predominantly greater than 740).\n- Other collateralized lending ($99.0 billion, largely warehousing facilities) represents the firm's largest loan category.\n\n### **Credit Risk Profile Implications**\n\n**Wells Fargo's Consumer Credit Risk:**\n- Exposed to cyclical consumer economic conditions (unemployment, home prices)\n- Uses pooled credit models for consumer portfolios, stratified by product type (mortgages, auto, credit cards), FICO scores, LTV ratios, and geographic factors\n- As of December 31, 2025, had $15.9 billion of C&I loans classified as criticized\n\n**Goldman Sachs' Wholesale Focus:**\n- Primarily exposed to corporate and financial institution counterparties (85% of other credit exposures to financial institutions)\n- Most corporate loans to investment-grade borrowers\n- Residential real estate exposure is primarily to affluent wealth management clients with strong credit profiles\n- Other credit exposures are largely to financial institutions and specialized collateralized lending (88% AAA/AA rated)\n\nIn summary, **Wells Fargo has substantially greater consumer credit risk exposure**, while **Goldman Sachs is predominantly a wholesale/institutional lending business** with minimal and declining consumer exposure.",
+    "ticker_check": {
+      "expected": [
+        "GS",
+        "WFC"
+      ],
+      "covered": [
+        "GS",
+        "WFC"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    "substring_check": null,
+    "judge": {
+      "faithfulness": null,
+      "relevance": null,
+      "unsupported_claims": [],
+      "notes": "JUDGE PARSE FAILURE: ```json\n{\n  \"faithfulness\": 2,\n  \"relevance\": 4,\n  \"unsupported_claims\": [\n    \"Goldman Sachs total loans of $239.9 billion - this figure is not in the tool results\",\n    \"Goldman Sachs wholesale/corp"
+    }
+  },
+  {
+    "id": "out_of_scope",
+    "category": "abstention",
+    "question": "What was Tesla's revenue in 2025?",
+    "answer": "I don't have data on Tesla. My coverage is limited to five companies: JPM (JPMorgan Chase), GS (Goldman Sachs), BAC (Bank of America), WFC (Wells Fargo), and UBS.\n\nIf you'd like to know about revenue for any of these five financial institutions in 2025 or other recent periods, I'd be happy to help.",
+    "ticker_check": null,
+    "substring_check": null,
+    "judge": {
+      "faithfulness": 5,
+      "relevance": 2,
+      "unsupported_claims": [],
+      "notes": "All claims are accurate and supported (no tool results to contradict, and the limitation statement is truthful). However, relevance is low because the answer doesn't address the Tesla revenue question - it redirects to other companies instead of either providing an answer or explaining why the data isn't available."
+    }
+  },
+  {
+    "id": "jpm_stockholders_equity",
+    "category": "numeric",
+    "question": "What was JPMorgan's stockholders' equity as of the most recent reporting period?",
+    "answer": "Based on JPMorgan's most recent 10-Q filing, **JPM's stockholders' equity as of March 31, 2026 (Q1 2026) was $364.04 billion**.",
+    "ticker_check": {
+      "expected": [
+        "JPM"
+      ],
+      "covered": [
+        "JPM"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    "substring_check": null,
+    "judge": {
+      "faithfulness": 5,
+      "relevance": 5,
+      "unsupported_claims": [],
+      "notes": "The answer directly cites the exact figure ($364.04 billion) from the tool results, correctly identifies the reporting date (March 31, 2026), fiscal period (Q1 2026), and form type (10-Q). All claims are precisely supported by the query output."
+    }
+  }
+]

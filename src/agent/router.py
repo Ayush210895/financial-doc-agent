@@ -46,19 +46,37 @@ You have two tools:
 For questions that need both a number and a narrative explanation, call both tools before answering.
 Always cite which ticker(s) and source each part of your answer comes from. If a tool returns no relevant data, say so explicitly rather than guessing.
 
-STRICT GROUNDING RULE FOR NUMBERS:
-- Every specific dollar figure, percentage, or growth rate you state MUST be a value that appears
-  verbatim in a tool result already returned in this conversation. Do not compute, round, blend,
-  or infer a number that isn't directly present in a tool's output.
+STRICT GROUNDING RULE (applies to numbers, names, quotes, and any specific claim):
+- Every specific dollar figure, percentage, growth rate, program/initiative name, direct quote, or
+  factual claim you state MUST appear verbatim or be directly and unambiguously supported by a tool
+  result already returned in this conversation. Do not compute, round, blend, or infer a number that
+  isn't directly present in a tool's output, and do not fill in plausible-sounding details (target
+  ratios, initiative names, specific figures) from general knowledge just because they're the kind
+  of thing a bank's filing would typically say. If you are not certain a specific claim came from
+  the tool results in front of you, leave it out.
+- search_filings returns short excerpts, not full documents. If the excerpts you retrieved are
+  fragmentary or don't fully cover what the question asks, say so explicitly ("the retrieved
+  excerpts don't provide detail on X") rather than writing a complete, well-organized answer that
+  goes beyond what the excerpts actually contain. A shorter, honestly-incomplete answer is correct
+  behavior here, not a failure.
 - If both query_financials and search_filings returned numbers relevant to the question (e.g. a
   segment figure from search_filings and a company-total figure from query_financials), you must
   keep them clearly separate and correctly labeled by scope (e.g. "firm-wide revenue" vs.
   "Investment Banking segment revenue") — never substitute one for the other.
-- Before writing your final answer, re-check each number you are about to state against the exact
-  tool_result content it came from. If you cannot point to the exact tool result a number came
-  from, do not include that number — say the data wasn't available instead.
+- Before writing your final answer, re-check each specific claim you are about to state against the
+  exact tool_result content it came from. If you cannot point to the exact tool result a claim came
+  from, do not include it — say the data wasn't available instead.
 - When query_financials returns a value, prefer it over any number implied by search_filings text
   for the same concept, since the SQL data is the authoritative structured source.
+
+TIMEFRAME DISCIPLINE:
+- If a question specifies a relative timeframe ("the past year," "last quarter," "this month"),
+  your query_financials SQL must filter to that actual date range (e.g. WHERE Date >= date('now',
+  '-1 year')), not just fetch all available rows and describe whatever span happens to come back.
+- If the data you retrieved covers a different span than what was asked (e.g. you only have ~2
+  years of history and can't isolate exactly "the past year" precisely), explicitly state the
+  actual date range your answer is based on, rather than silently answering about a different
+  period than the one asked about.
 """
 
 TOOLS = [
@@ -134,7 +152,12 @@ def run_agent(question, index, metadata, client, max_turns=5):
                     block.input["query"], index, metadata,
                     tickers=block.input.get("tickers"), top_k=5,
                 )
-                trace.append({"tool": "search_filings", "input": block.input, "n_results": len(result)})
+                trace.append({
+                    "tool": "search_filings",
+                    "input": block.input,
+                    "n_results": len(result),
+                    "result": [{"ticker": r["ticker"], "text": r["text"][:400]} for r in result],
+                })
                 content = json.dumps([{"ticker": r["ticker"], "text": r["text"], "rerank_score": r.get("rerank_score")} for r in result])
             elif block.name == "query_financials":
                 result = query_financials(block.input["sql"])
