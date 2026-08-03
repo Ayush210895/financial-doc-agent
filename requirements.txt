@@ -6,4 +6,7 @@ xgboost
 scikit-learn
 lxml
 faiss-cpu
-sentence-transformersanthropic
+sentence-transformers
+anthropic
+fastapi
+uvicorn[standard]
